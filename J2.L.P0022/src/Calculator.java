@@ -631,12 +631,20 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMCActionPerformed
 
     private void btnMplusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMplusActionPerformed
-        mem = mem.add(new BigDecimal(txtDisplay.getText()));
+        try {
+            mem = mem.add(new BigDecimal(txtDisplay.getText()));
+        } catch (Exception e) {
+            mem = new BigDecimal(txtDisplay.getText());
+        }
         afResult = true;
     }//GEN-LAST:event_btnMplusActionPerformed
 
     private void btnMminusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMminusActionPerformed
-        mem  = mem.subtract(new BigDecimal(txtDisplay.getText()));
+        try {
+            mem  = mem.subtract(new BigDecimal(txtDisplay.getText()));
+        } catch (Exception e) {
+            mem = new BigDecimal(txtDisplay.getText());
+        }
         afResult = true;
     }//GEN-LAST:event_btnMminusActionPerformed
 
